@@ -3,6 +3,8 @@ from pydantic import BaseModel, Field
 from typing import Optional, List
 import sqlite3
 from datetime import datetime
+import uvicorn
+
 
 app = FastAPI(
     title="Bank Transaction System API",
@@ -366,5 +368,4 @@ async def get_balance(account_number: str):
         raise HTTPException(status_code=404, detail="Account not found")
 
 if __name__ == "__main__":
-    import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)

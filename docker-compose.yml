@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    command: ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+
+  # db:
+  #   image: sqlite:latest
+  #   volumes:
+  #     - db_data:/var/lib/sqlite
+
+
+  # tests:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   volumes:
+  #     - .:/app
+  #   command: ["pytest", "-v"]
+  #   depends_on:
+  #     - db
