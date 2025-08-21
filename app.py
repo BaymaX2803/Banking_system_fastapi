@@ -5,6 +5,7 @@ import sqlite3
 from datetime import datetime
 import uvicorn
 
+# print("HI")
 
 app = FastAPI(
     title="Bank Transaction System API",
