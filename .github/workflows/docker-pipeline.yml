@@ -3,8 +3,12 @@ name: CICDpipeline
 on:
   push:
     branches: [ "main" ]
+    paths: 
+      - 'deployment/Dockerfile'
   pull_request:
     branches: [ "main" ]
+    paths: 
+      - 'deployment/Dockerfile'
 
 jobs:
 
